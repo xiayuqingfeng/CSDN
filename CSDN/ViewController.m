@@ -42,6 +42,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     urlStr= [NSMutableArray arrayWithArray:[defaults arrayForKey:@"URL"]];
     _readData.text = [NSString stringWithFormat:@"现有博客ID数组：\n%@",urlStr];
+    _readData.editable = NO;
     _idCount.text = [NSString stringWithFormat:@"%ld",urlStr.count];
     
     _aWeb.delegate = self;
