@@ -14,6 +14,7 @@
 		2A0C697B1B802D2300376E23 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A0C697A1B802D2300376E23 /* Images.xcassets */; };
 		2A0C697E1B802D2300376E23 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A0C697C1B802D2300376E23 /* LaunchScreen.xib */; };
 		2A0C698A1B802D2300376E23 /* CSDNTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0C69891B802D2300376E23 /* CSDNTests.m */; };
+		2A3FD0751B80C51A0063EE59 /* SetUrlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3FD0741B80C51A0063EE59 /* SetUrlViewController.m */; };
 		2A4566B71B8060390043FA09 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4566B61B8060390043FA09 /* WebViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,8 @@
 		2A0C69831B802D2300376E23 /* CSDNTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSDNTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A0C69881B802D2300376E23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A0C69891B802D2300376E23 /* CSDNTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSDNTests.m; sourceTree = "<group>"; };
+		2A3FD0731B80C51A0063EE59 /* SetUrlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetUrlViewController.h; sourceTree = "<group>"; };
+		2A3FD0741B80C51A0063EE59 /* SetUrlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetUrlViewController.m; sourceTree = "<group>"; };
 		2A4566B51B8060390043FA09 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		2A4566B61B8060390043FA09 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +93,8 @@
 				2A0C69751B802D2300376E23 /* ViewController.m */,
 				2A4566B51B8060390043FA09 /* WebViewController.h */,
 				2A4566B61B8060390043FA09 /* WebViewController.m */,
+				2A3FD0731B80C51A0063EE59 /* SetUrlViewController.h */,
+				2A3FD0741B80C51A0063EE59 /* SetUrlViewController.m */,
 				2A0C69771B802D2300376E23 /* Main.storyboard */,
 				2A0C697A1B802D2300376E23 /* Images.xcassets */,
 				2A0C697C1B802D2300376E23 /* LaunchScreen.xib */,
@@ -226,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A0C69761B802D2300376E23 /* ViewController.m in Sources */,
+				2A3FD0751B80C51A0063EE59 /* SetUrlViewController.m in Sources */,
 				2A0C69731B802D2300376E23 /* AppDelegate.m in Sources */,
 				2A0C69701B802D2300376E23 /* main.m in Sources */,
 				2A4566B71B8060390043FA09 /* WebViewController.m in Sources */,

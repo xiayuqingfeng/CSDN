@@ -7,9 +7,10 @@
 //
 
 #import "WebViewController.h"
-
 @interface WebViewController ()
 {
+    NSString *httpStr;
+    NSString *containsStr;
     NSMutableArray *urlIdArray;
 }
 @end
@@ -17,7 +18,7 @@
 @implementation WebViewController
 - (IBAction)pop:(id)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:urlIdArray forKey:@"URL"];
+    [defaults setObject:urlIdArray forKey:@"UrlArray"];
     [defaults synchronize];
     
     [self dismissViewControllerAnimated:YES completion:^{
@@ -33,37 +34,61 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    void (^printXAndY)( NSString * ) = ^( NSString *title){
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"警告" message:title delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+        [alertView show];
+    };
+  
     urlIdArray = [NSMutableArray arrayWithCapacity:0];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSArray *defaultsArray = [defaults arrayForKey:@"URL"];
+    httpStr = [defaults stringForKey:@"httpStr"];
+    containsStr = [defaults stringForKey:@"containsStr"];
+    NSArray *defaultsArray = [defaults arrayForKey:@"UrlArray"];
+    
+    NSString *title;
+    if (httpStr.length < 1 && containsStr.length < 1) {
+        title = @"您还没有设置网址和关键字段";
+        printXAndY(title);
+    }else if (httpStr.length < 1) {
+        title = @"您还没有设置网址";
+        printXAndY(title);
+    }else if (containsStr.length < 1) {
+        title = @"您还没有设置关键字段";
+        printXAndY(title);
+    }
+    
     if (defaultsArray.count < 1) {
         NSArray *ary = [[NSArray alloc] init];
-        [defaults setObject:ary forKey:@"URL"];
+        [defaults setObject:ary forKey:@"UrlArray"];
+        [defaults synchronize];
     }else{
         urlIdArray = [NSMutableArray arrayWithArray:defaultsArray];
     }
     _aWeb.delegate = self;
-    NSURL *aNSURL = [NSURL URLWithString:@"http://blog.csdn.net/u012460084/"];
+    NSURL *aNSURL = [NSURL URLWithString:httpStr];
     NSURLRequest *request = [NSURLRequest requestWithURL:aNSURL];
     [_aWeb loadRequest:request];
     
 }
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
-    
-    NSString *requestUrl = [NSString stringWithFormat:@"%@",request.URL];
-    if ([requestUrl containsString:@"details/"]) {
-        NSString *rangStr = @"details/";
-        NSRange rang =  [requestUrl rangeOfString:rangStr];
-        NSString *idStr = [requestUrl substringFromIndex:rang.location + rang.length];
-        if (idStr.length == 8) {
-            if (![urlIdArray containsObject:idStr]) {
-                [urlIdArray addObject:idStr];
-                NSLog(@"askdbaksjd------%@-------%@",idStr,urlIdArray);
+    if (httpStr.length > 0 && containsStr.length > 0) {
+        NSString *requestUrl = [NSString stringWithFormat:@"%@",request.URL];
+        if ([requestUrl containsString:containsStr]) {
+            NSRange rang =  [requestUrl rangeOfString:containsStr];
+            NSString *idStr = [requestUrl substringFromIndex:rang.location + rang.length];
+            if (idStr.length == 8) {
+                if (![urlIdArray containsObject:idStr]) {
+                    [urlIdArray addObject:idStr];
+                    NSLog(@"askdbaksjd------%@-------%@",idStr,urlIdArray);
+                }
             }
         }
     }
     return YES;
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
