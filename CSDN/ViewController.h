@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UIWebViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIButton *Go;
+
+@property (weak, nonatomic) IBOutlet UIWebView *aWeb;
+@property (weak, nonatomic) IBOutlet UILabel *idCount;
+@property (weak, nonatomic) IBOutlet UITextView *readData;
 
 @end
 

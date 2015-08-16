@@ -14,6 +14,7 @@
 		2A0C697B1B802D2300376E23 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A0C697A1B802D2300376E23 /* Images.xcassets */; };
 		2A0C697E1B802D2300376E23 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A0C697C1B802D2300376E23 /* LaunchScreen.xib */; };
 		2A0C698A1B802D2300376E23 /* CSDNTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A0C69891B802D2300376E23 /* CSDNTests.m */; };
+		2A4566B71B8060390043FA09 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4566B61B8060390043FA09 /* WebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		2A0C69831B802D2300376E23 /* CSDNTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSDNTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A0C69881B802D2300376E23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A0C69891B802D2300376E23 /* CSDNTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSDNTests.m; sourceTree = "<group>"; };
+		2A4566B51B8060390043FA09 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		2A4566B61B8060390043FA09 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 				2A0C69721B802D2300376E23 /* AppDelegate.m */,
 				2A0C69741B802D2300376E23 /* ViewController.h */,
 				2A0C69751B802D2300376E23 /* ViewController.m */,
+				2A4566B51B8060390043FA09 /* WebViewController.h */,
+				2A4566B61B8060390043FA09 /* WebViewController.m */,
 				2A0C69771B802D2300376E23 /* Main.storyboard */,
 				2A0C697A1B802D2300376E23 /* Images.xcassets */,
 				2A0C697C1B802D2300376E23 /* LaunchScreen.xib */,
@@ -168,6 +173,7 @@
 				TargetAttributes = {
 					2A0C69691B802D2300376E23 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 4VXZQB2W6T;
 					};
 					2A0C69821B802D2300376E23 = {
 						CreatedOnToolsVersion = 6.4;
@@ -222,6 +228,7 @@
 				2A0C69761B802D2300376E23 /* ViewController.m in Sources */,
 				2A0C69731B802D2300376E23 /* AppDelegate.m in Sources */,
 				2A0C69701B802D2300376E23 /* main.m in Sources */,
+				2A4566B71B8060390043FA09 /* WebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +287,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xin Xiaoming (S7PQL25GJJ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xin Xiaoming (S7PQL25GJJ)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -299,9 +307,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "a326d4a7-d83b-4fd4-8d6c-a42151fc2ab5";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -324,7 +333,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xin Xiaoming (S7PQL25GJJ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xin Xiaoming (S7PQL25GJJ)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -337,8 +347,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "a326d4a7-d83b-4fd4-8d6c-a42151fc2ab5";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -349,7 +360,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xin Xiaoming (S7PQL25GJJ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xin Xiaoming (S7PQL25GJJ)";
 				INFOPLIST_FILE = CSDN/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -359,7 +373,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xin Xiaoming (S7PQL25GJJ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xin Xiaoming (S7PQL25GJJ)";
 				INFOPLIST_FILE = CSDN/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -369,6 +386,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xin Xiaoming (S7PQL25GJJ)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -380,6 +398,7 @@
 				INFOPLIST_FILE = CSDNTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a326d4a7-d83b-4fd4-8d6c-a42151fc2ab5";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CSDN.app/CSDN";
 			};
 			name = Debug;
@@ -388,6 +407,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xin Xiaoming (S7PQL25GJJ)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -395,6 +415,7 @@
 				INFOPLIST_FILE = CSDNTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a326d4a7-d83b-4fd4-8d6c-a42151fc2ab5";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CSDN.app/CSDN";
 			};
 			name = Release;
@@ -418,6 +439,7 @@
 				2A0C698F1B802D2300376E23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A0C69901B802D2300376E23 /* Build configuration list for PBXNativeTarget "CSDNTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +448,7 @@
 				2A0C69921B802D2300376E23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
