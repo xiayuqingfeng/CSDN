@@ -46,7 +46,7 @@
     [defaults setObject:clearArray forKey:@"UrlArray"];
     [defaults synchronize];
     _readData.text = @"现有博客ID数组：";
-    _idCount.text = @"0";
+    _idCount.text = @"0条";
     urlStrArray = [NSArray array];
     [refreshIdArray removeAllObjects];
 }
@@ -68,7 +68,7 @@
     
     _readData.text = [NSString stringWithFormat:@"现有博客ID数组：\n%@",urlStrArray];
     _readData.editable = NO;
-    _idCount.text = [NSString stringWithFormat:@"%ld",urlStrArray.count];
+    _idCount.text = [NSString stringWithFormat:@"%ld条",(unsigned long)urlStrArray.count];
     
     _aWeb.delegate = self;
     NSURL *aNSURL = [NSURL URLWithString:httpStr];
@@ -81,7 +81,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     urlStrArray= [NSMutableArray arrayWithArray:[defaults arrayForKey:@"UrlArray"]];
     _readData.text = [NSString stringWithFormat:@"现有博客ID数组：\n%@",urlStrArray];
-    _idCount.text = [NSString stringWithFormat:@"%ld",urlStrArray.count];
+    _idCount.text = [NSString stringWithFormat:@"%ld条",(unsigned long)urlStrArray.count];
 }
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
@@ -92,6 +92,13 @@
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+    
+    //判断是否是单击
+    if (navigationType == UIWebViewNavigationTypeLinkClicked)
+    {
+        return NO;
+    }
+    
     if (urlStrArray.count > 0 && httpStr.length > 0 && containsStr.length > 0) {
         NSString *requestUrl = [NSString stringWithFormat:@"%@",request.URL];
         if ([requestUrl containsString:containsStr]) {
@@ -116,6 +123,7 @@
         NSRange rang =  [requestUrl rangeOfString:containsStr];
         NSString *idStr = [requestUrl substringFromIndex:rang.location + rang.length];
         NSInteger index = [urlStrArray indexOfObject:idStr];
+        _refreshShow.text = [NSString stringWithFormat:@"%ld条",(long)index+1];
         if (index < urlStrArray.count-1) {
             NSURL *aNSURL = [NSURL URLWithString:[httpStr stringByAppendingString:[NSString stringWithFormat:@"%@",urlStrArray[index+1]]]];
             NSURLRequest *request = [NSURLRequest requestWithURL:aNSURL];
@@ -124,16 +132,18 @@
     }
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
-//    NSString *requestUrl = [NSString stringWithFormat:@"%@",[webView.request URL]];
-//    NSString *rangStr = @"details/";
-//    NSRange rang =  [requestUrl rangeOfString:rangStr];
-//    NSString *idStr = [requestUrl substringFromIndex:rang.location + rang.length];
-//    NSInteger index = [urlStrArray indexOfObject:idStr];
-//    if (index < urlStrArray.count-1) {
-//        NSURL *aNSURL = [NSURL URLWithString:[httpStr stringByAppendingString:[NSString stringWithFormat:@"%@",urlStrArray[index+1]]]];
-//        NSURLRequest *request = [NSURLRequest requestWithURL:aNSURL];
-//        [_aWeb loadRequest:request];
-//    }
+    NSString *requestUrl = [NSString stringWithFormat:@"%@",[webView.request URL]];
+    if (urlStrArray.count > 0 && httpStr.length > 0 && containsStr.length > 0 && [requestUrl containsString:containsStr]) {
+        NSRange rang =  [requestUrl rangeOfString:containsStr];
+        NSString *idStr = [requestUrl substringFromIndex:rang.location + rang.length];
+        NSInteger index = [urlStrArray indexOfObject:idStr];
+        _refreshShow.text = [NSString stringWithFormat:@"%ld条",(long)index+1];
+        if (index < urlStrArray.count-1) {
+            NSURL *aNSURL = [NSURL URLWithString:[httpStr stringByAppendingString:[NSString stringWithFormat:@"%@",urlStrArray[index+1]]]];
+            NSURLRequest *request = [NSURLRequest requestWithURL:aNSURL];
+            [_aWeb loadRequest:request];
+        }
+    }
 }
 
 @end

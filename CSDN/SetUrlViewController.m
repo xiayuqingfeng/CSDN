@@ -25,17 +25,35 @@
     [defaults setObject:_textViewOne.text forKey:@"httpStr"];
     [defaults synchronize];
 }
-- (IBAction)useOneBut:(id)sender {
-    
-}
+
 - (IBAction)setTowBut:(id)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:_textViewTow.text forKey:@"containsStr"];
+    [defaults setObject:_textViewTow.text forKey:@"httpList"];
     [defaults synchronize];
 }
-- (IBAction)useTowBut:(id)sender {
-    
+
+- (IBAction)setThreeBut:(id)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:_textViewThree.text forKey:@"containsStr"];
+    [defaults synchronize];
 }
+
+
+- (IBAction)useLongIdArray:(id)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSArray *longIdArray = [defaults arrayForKey:@"longIdArray"];
+    [defaults setObject:longIdArray forKey:@"UrlArray"];
+    [defaults synchronize];
+}
+- (IBAction)clearLongIdArray:(id)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSArray *longIdArray = [NSArray array];
+    [defaults setObject:longIdArray forKey:@"longIdArray"];
+    [defaults synchronize];
+    
+    _longIdArrayTextView.text = @"最长数组为空！！！";
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,6 +62,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     httpStr = [defaults stringForKey:@"httpStr"];
     containsStr = [defaults stringForKey:@"containsStr"];
+    NSArray *longIdArray = [defaults arrayForKey:@"longIdArray"];
     
     if (httpStr.length > 0) {
         _textViewOne.text = httpStr;
@@ -51,6 +70,10 @@
     if (containsStr.length > 0) {
         _textViewTow.text = containsStr;
     }
+    if (longIdArray.count > 0) {
+        _longIdArrayTextView.text = [NSString stringWithFormat:@"最长id数组，有%ld条\n%@",(long)longIdArray.count,longIdArray];
+    }
+    _longIdArrayTextView.editable = NO;
 }
 
 - (void)didReceiveMemoryWarning {

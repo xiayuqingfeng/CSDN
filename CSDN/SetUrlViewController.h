@@ -11,5 +11,7 @@
 @interface SetUrlViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextView *textViewOne;
 @property (weak, nonatomic) IBOutlet UITextView *textViewTow;
+@property (strong, nonatomic) IBOutlet UITextView *textViewThree;
+@property (strong, nonatomic) IBOutlet UITextView *longIdArrayTextView;
 
 @end

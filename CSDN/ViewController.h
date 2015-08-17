@@ -11,9 +11,9 @@
 @interface ViewController : UIViewController<UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *Go;
-
 @property (weak, nonatomic) IBOutlet UIWebView *aWeb;
 @property (weak, nonatomic) IBOutlet UILabel *idCount;
+@property (strong, nonatomic) IBOutlet UILabel *refreshShow;
 @property (weak, nonatomic) IBOutlet UITextView *readData;
 
 @end
