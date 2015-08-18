@@ -14,31 +14,16 @@
     NSString *containsStr;
     NSArray *urlStrArray;
     NSMutableArray *refreshIdArray;
+    
+    BOOL refreshTimerBool;
 }
 @end
 
 @implementation ViewController
 - (IBAction)Go:(id)sender {
-    void (^printXAndY)( NSString * ) = ^( NSString *title){
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"警告" message:title delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
-        [alertView show];
-    };
-    
-    NSString *title;
-    if (urlStrArray.count > 0) {
-        NSURL *aNSURL = [NSURL URLWithString:[httpStr stringByAppendingString:[NSString stringWithFormat:@"%@",urlStrArray[0]]]];
-        NSURLRequest *request = [NSURLRequest requestWithURL:aNSURL];
-        [_aWeb loadRequest:request];
-        refreshIdArray = [NSMutableArray arrayWithCapacity:0];
-        
-        if (httpStr.length < 1) {
-            title = @"您还没有设置网址";
-            printXAndY(title);
-        }
-    }else{
-        title = @"id数组为空";
-        printXAndY(title);
-    }
+    refreshTimerBool = NO;
+
+    [self requestFirstUrl];
 }
 - (IBAction)clearIdArray:(id)sender {
     NSArray *clearArray = [NSArray array];
@@ -57,10 +42,47 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:aNSURL];
     [_aWeb loadRequest:request];
 }
+- (IBAction)timeRefresh:(id)sender {
+    UIButton *but = (UIButton *)sender;
+    if (refreshTimerBool) {
+        [but setTitle:@"循环开始" forState:UIControlStateNormal];
+        refreshTimerBool = NO;
+        [_aWeb stopLoading];
+    }else{
+        [but setTitle:@"循环新中" forState:UIControlStateNormal];
+        refreshTimerBool = YES;
+        [self requestFirstUrl];
+    }
+}
+- (void)requestFirstUrl{
 
+    void (^printXAndY)( NSString * ) = ^( NSString *title){
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"警告" message:title delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+        [alertView show];
+    };
+    
+    NSString *title;
+    if (urlStrArray.count > 0) {
+        NSURL *aNSURL = [NSURL URLWithString:[httpStr stringByAppendingString:[NSString stringWithFormat:@"%@",urlStrArray[0]]]];
+        NSLog(@"asdakjhsd899=-----%@",aNSURL);
+        NSURLRequest *request = [NSURLRequest requestWithURL:aNSURL];
+        [_aWeb loadRequest:request];
+        refreshIdArray = [NSMutableArray arrayWithCapacity:0];
+        
+        if (httpStr.length < 1) {
+            title = @"您还没有设置网址";
+            printXAndY(title);
+        }
+    }else{
+        title = @"id数组为空";
+        printXAndY(title);
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    refreshTimerBool = NO;
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     httpStr = [defaults stringForKey:@"httpStr"];
     containsStr = [defaults stringForKey:@"containsStr"];
@@ -92,7 +114,6 @@
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
-    
     //判断是否是单击
     if (navigationType == UIWebViewNavigationTypeLinkClicked)
     {
@@ -124,11 +145,30 @@
         NSString *idStr = [requestUrl substringFromIndex:rang.location + rang.length];
         NSInteger index = [urlStrArray indexOfObject:idStr];
         _refreshShow.text = [NSString stringWithFormat:@"%ld条",(long)index+1];
-        if (index < urlStrArray.count-1) {
-            NSURL *aNSURL = [NSURL URLWithString:[httpStr stringByAppendingString:[NSString stringWithFormat:@"%@",urlStrArray[index+1]]]];
-            NSURLRequest *request = [NSURLRequest requestWithURL:aNSURL];
-            [_aWeb loadRequest:request];
+        
+        if (refreshTimerBool) {
+            if (index < urlStrArray.count-1) {
+                NSURL *aNSURL = [NSURL URLWithString:[httpStr stringByAppendingString:[NSString stringWithFormat:@"%@",urlStrArray[index+1]]]];
+                NSURLRequest *request = [NSURLRequest requestWithURL:aNSURL];
+                [_aWeb loadRequest:request];
+            }else{
+                [self performSelector:@selector(requestFirstUrl) withObject:nil afterDelay:5.0f];
+//                [self requestFirstUrl];
+            }
+        }else{
+            if (index < urlStrArray.count-1) {
+                NSURL *aNSURL = [NSURL URLWithString:[httpStr stringByAppendingString:[NSString stringWithFormat:@"%@",urlStrArray[index+1]]]];
+                NSURLRequest *request = [NSURLRequest requestWithURL:aNSURL];
+                [_aWeb loadRequest:request];
+            }else{
+                NSURL *aNSURL = [NSURL URLWithString:[httpStr stringByAppendingString:[NSString stringWithFormat:@"%@",urlStrArray[0]]]];
+                NSLog(@"asdakjhsd899=-----%@",aNSURL);
+                NSURLRequest *request = [NSURLRequest requestWithURL:aNSURL];
+                [_aWeb loadRequest:request];
+                refreshIdArray = [NSMutableArray arrayWithCapacity:0];
+            }
         }
+        
     }
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
@@ -138,11 +178,30 @@
         NSString *idStr = [requestUrl substringFromIndex:rang.location + rang.length];
         NSInteger index = [urlStrArray indexOfObject:idStr];
         _refreshShow.text = [NSString stringWithFormat:@"%ld条",(long)index+1];
-        if (index < urlStrArray.count-1) {
-            NSURL *aNSURL = [NSURL URLWithString:[httpStr stringByAppendingString:[NSString stringWithFormat:@"%@",urlStrArray[index+1]]]];
-            NSURLRequest *request = [NSURLRequest requestWithURL:aNSURL];
-            [_aWeb loadRequest:request];
+        
+        if (refreshTimerBool) {
+            if (index < urlStrArray.count-1) {
+                NSURL *aNSURL = [NSURL URLWithString:[httpStr stringByAppendingString:[NSString stringWithFormat:@"%@",urlStrArray[index+1]]]];
+                NSURLRequest *request = [NSURLRequest requestWithURL:aNSURL];
+                [_aWeb loadRequest:request];
+            }else{
+                [self performSelector:@selector(requestFirstUrl) withObject:nil afterDelay:5.0f];
+                
+            }
+        }else{
+            if (index < urlStrArray.count-1) {
+                NSURL *aNSURL = [NSURL URLWithString:[httpStr stringByAppendingString:[NSString stringWithFormat:@"%@",urlStrArray[index+1]]]];
+                NSURLRequest *request = [NSURLRequest requestWithURL:aNSURL];
+                [_aWeb loadRequest:request];
+            }else{
+                NSURL *aNSURL = [NSURL URLWithString:[httpStr stringByAppendingString:[NSString stringWithFormat:@"%@",urlStrArray[0]]]];
+                NSLog(@"asdakjhsd899=-----%@",aNSURL);
+                NSURLRequest *request = [NSURLRequest requestWithURL:aNSURL];
+                [_aWeb loadRequest:request];
+                refreshIdArray = [NSMutableArray arrayWithCapacity:0];
+            }
         }
+        
     }
 }
 
