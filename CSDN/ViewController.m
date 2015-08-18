@@ -18,7 +18,8 @@
     BOOL refreshTimerBool;
 }
 @end
-
+#define arc_block(x) __block typeof(x) __weak weak_##x = x
+#define EQUAL(a, b)	[a isEqual:b]
 @implementation ViewController
 - (IBAction)Go:(id)sender {
     refreshTimerBool = NO;
@@ -78,8 +79,47 @@
         printXAndY(title);
     }
 }
+<<<<<<< Updated upstream
+=======
+- (IBAction)clearIdArray:(id)sender {
+    NSArray *clearArray = [NSArray array];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:clearArray forKey:@"UrlArray"];
+    [defaults synchronize];
+    _readData.text = @"现有博客ID数组：";
+    _idCount.text = @"0条";
+    urlStrArray = [NSArray array];
+    [refreshIdArray removeAllObjects];
+}
+- (IBAction)refresh:(id)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    httpStr = [defaults stringForKey:@"httpStr"];
+    NSURL *aNSURL = [NSURL URLWithString:httpStr];
+    NSURLRequest *request = [NSURLRequest requestWithURL:aNSURL];
+    [_aWeb loadRequest:request];
+}
+- (IBAction)removeCached:(id)sender {
+    //清除UIWebView的缓存
+    NSURLCache * cache = [NSURLCache sharedURLCache];
+    [cache removeAllCachedResponses];
+    [cache setDiskCapacity:0];
+    [cache setMemoryCapacity:0];
+}
+- (IBAction)removeCookie:(id)sender {
+    //清除cookies
+    NSHTTPCookie *cookie;
+    NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    for (cookie in [storage cookies])
+    {
+        [storage deleteCookie:cookie];
+    }
+}
+
+>>>>>>> Stashed changes
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    arc_block(self);
     // Do any additional setup after loading the view, typically from a nib.
     refreshTimerBool = NO;
     
@@ -97,6 +137,13 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:aNSURL];
     [_aWeb loadRequest:request];
     
+    
+#ifdef DEBUG
+    NSString *strName = [[UIDevice currentDevice] name];
+    if (!EQUAL(strName, @"iPhone Simulator")) {
+        [self firTestPackageUpdatePrompt];
+    }
+#endif
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -111,6 +158,33 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark <-----fir_测试包更新提示----->
+- (void)firTestPackageUpdatePrompt{
+    NSString *build = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    NSInteger buildValue = [build integerValue];
+    NSURL *url = [NSURL URLWithString:@"http://fir.im/api/v2/app/version/55d1e4f4e75e2d31f9000027"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        if (data) {
+            NSDictionary *dict=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+            NSString *firBuild = dict[@"version"];
+            NSLog(@"asdasd----%@",firBuild);
+            NSInteger firBuildValue = [firBuild integerValue];
+            if (firBuildValue > buildValue) {
+                UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:[NSString stringWithFormat:@"🌞🌞新包测试🌞🌞\n\n%@年%@月%@号第%@次打包",[firBuild substringWithRange:NSMakeRange(0, 4)],[firBuild substringWithRange:NSMakeRange(4, 2)],[firBuild substringWithRange:NSMakeRange(6, 2)],[firBuild substringFromIndex:8]]  delegate:self cancelButtonTitle:@"更新" destructiveButtonTitle:@"暂不更新" otherButtonTitles:nil];
+                [actionSheet showInView:[UIApplication sharedApplication].keyWindow];
+            }
+        }
+    }];
+}
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0) {
+        //        exit(0);
+    }else {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://fir.im/1c9y"]];
+    }
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{

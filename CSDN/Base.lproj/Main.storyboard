@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -220,26 +221,71 @@
                                     </mask>
                                 </variation>
                             </label>
+<<<<<<< Updated upstream
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fm6-zl-90N">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="i4q-11-Mck"/>
                                 </constraints>
                                 <state key="normal" title="计时刷新">
+=======
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vir-RT-61e">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.21568627450980393" green="1" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Utw-ot-RZl"/>
+                                </constraints>
+                                <state key="normal" title="清理缓存">
+>>>>>>> Stashed changes
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
+<<<<<<< Updated upstream
                                         <exclude reference="i4q-11-Mck"/>
+=======
+                                        <exclude reference="Utw-ot-RZl"/>
+>>>>>>> Stashed changes
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
+<<<<<<< Updated upstream
                                         <include reference="i4q-11-Mck"/>
                                     </mask>
                                 </variation>
                                 <connections>
                                     <action selector="timeRefresh:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vlJ-TU-oac"/>
+=======
+                                        <include reference="Utw-ot-RZl"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="removeCached:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uev-EU-gjm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1j-pR-M40">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.2156862745" green="1" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5Ws-zR-LCG"/>
+                                </constraints>
+                                <state key="normal" title="清理cookie">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="5Ws-zR-LCG"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="5Ws-zR-LCG"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="removeCookie:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6fg-Xz-4TC"/>
+>>>>>>> Stashed changes
                                 </connections>
                             </button>
                         </subviews>
@@ -248,6 +294,7 @@
                             <constraint firstItem="7UJ-0d-j8d" firstAttribute="top" secondItem="OJD-3J-BWd" secondAttribute="bottom" constant="15" id="1Lm-DS-Eqg"/>
                             <constraint firstItem="giV-Z5-omS" firstAttribute="centerY" secondItem="1OO-pf-01M" secondAttribute="centerY" id="2UY-0b-iOq"/>
                             <constraint firstItem="1OO-pf-01M" firstAttribute="leading" secondItem="giV-Z5-omS" secondAttribute="trailing" constant="36" id="2gS-Jw-QZE"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vir-RT-61e" secondAttribute="bottom" constant="20" id="3Hc-Nd-NLZ"/>
                             <constraint firstItem="1OO-pf-01M" firstAttribute="centerY" secondItem="25X-V0-Vz5" secondAttribute="centerY" id="779-Gt-X1K"/>
                             <constraint firstItem="7Kb-Xq-ubF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="8X0-zA-8D5"/>
                             <constraint firstItem="QTp-Ws-RA2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Aro-wQ-pF4">
@@ -258,7 +305,7 @@
                             <constraint firstItem="hx3-Ug-6C0" firstAttribute="leading" secondItem="FnQ-OP-Vs6" secondAttribute="trailing" constant="17" id="Cq2-hO-yiP">
                                 <variation key="widthClass=compact" constant="5"/>
                             </constraint>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7Kb-Xq-ubF" secondAttribute="bottom" id="Eq6-2K-W7S"/>
+                            <constraint firstItem="vir-RT-61e" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-8" id="EBM-sS-Y3N"/>
                             <constraint firstItem="2oO-Jh-oMe" firstAttribute="leading" secondItem="7UJ-0d-j8d" secondAttribute="trailing" constant="16" id="Ffa-4m-b8W">
                                 <variation key="widthClass=compact" constant="5"/>
                             </constraint>
@@ -273,7 +320,10 @@
                             <constraint firstItem="Fm6-zl-90N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="2" id="eLs-DP-YZ3"/>
                             <constraint firstAttribute="trailing" secondItem="7Kb-Xq-ubF" secondAttribute="trailing" constant="8" id="fRn-Rl-xQx"/>
                             <constraint firstItem="QTp-Ws-RA2" firstAttribute="top" secondItem="OJD-3J-BWd" secondAttribute="bottom" constant="15" id="fgP-ts-45b"/>
+                            <constraint firstItem="vir-RT-61e" firstAttribute="top" secondItem="f1j-pR-M40" secondAttribute="top" id="gkb-i5-3u2"/>
+                            <constraint firstItem="vir-RT-61e" firstAttribute="top" secondItem="7Kb-Xq-ubF" secondAttribute="bottom" constant="11" id="gov-CL-c2i"/>
                             <constraint firstItem="7Kb-Xq-ubF" firstAttribute="top" secondItem="ejx-1O-hBg" secondAttribute="bottom" constant="8" id="qgq-JM-RAc"/>
+                            <constraint firstItem="f1j-pR-M40" firstAttribute="leading" secondItem="vir-RT-61e" secondAttribute="trailing" constant="17" id="sF3-Yv-x2L"/>
                             <constraint firstItem="giV-Z5-omS" firstAttribute="top" secondItem="7UJ-0d-j8d" secondAttribute="bottom" constant="7" id="sw8-Dd-Ifi"/>
                             <constraint firstItem="hx3-Ug-6C0" firstAttribute="centerY" secondItem="FnQ-OP-Vs6" secondAttribute="centerY" id="szg-RJ-K19"/>
                             <constraint firstItem="FnQ-OP-Vs6" firstAttribute="leading" secondItem="2oO-Jh-oMe" secondAttribute="trailing" constant="15" id="t09-gv-dDJ">
@@ -296,15 +346,23 @@
                                 <exclude reference="hx3-Ug-6C0"/>
                                 <exclude reference="1OO-pf-01M"/>
                                 <exclude reference="25X-V0-Vz5"/>
+<<<<<<< Updated upstream
                                 <exclude reference="Fm6-zl-90N"/>
+=======
+                                <exclude reference="vir-RT-61e"/>
+                                <exclude reference="f1j-pR-M40"/>
+>>>>>>> Stashed changes
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="ChJ-al-Xm1"/>
                                 <exclude reference="Rmc-NZ-6Qy"/>
                                 <exclude reference="XuR-J8-qbd"/>
+<<<<<<< Updated upstream
                                 <exclude reference="CIG-dO-p2b"/>
                                 <exclude reference="GMR-JT-C3c"/>
                                 <exclude reference="eLs-DP-YZ3"/>
+=======
+>>>>>>> Stashed changes
                                 <exclude reference="Aro-wQ-pF4"/>
                                 <exclude reference="fgP-ts-45b"/>
                                 <exclude reference="1Lm-DS-Eqg"/>
@@ -326,7 +384,15 @@
                                 <exclude reference="yyb-Z6-FRh"/>
                                 <exclude reference="Cq2-hO-yiP"/>
                                 <exclude reference="szg-RJ-K19"/>
+<<<<<<< Updated upstream
                                 <exclude reference="Eq6-2K-W7S"/>
+=======
+                                <exclude reference="EBM-sS-Y3N"/>
+                                <exclude reference="gkb-i5-3u2"/>
+                                <exclude reference="gov-CL-c2i"/>
+                                <exclude reference="sF3-Yv-x2L"/>
+                                <exclude reference="3Hc-Nd-NLZ"/>
+>>>>>>> Stashed changes
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -341,15 +407,23 @@
                                 <include reference="hx3-Ug-6C0"/>
                                 <include reference="1OO-pf-01M"/>
                                 <include reference="25X-V0-Vz5"/>
+<<<<<<< Updated upstream
                                 <include reference="Fm6-zl-90N"/>
+=======
+                                <include reference="vir-RT-61e"/>
+                                <include reference="f1j-pR-M40"/>
+>>>>>>> Stashed changes
                             </mask>
                             <mask key="constraints">
                                 <include reference="ChJ-al-Xm1"/>
                                 <include reference="Rmc-NZ-6Qy"/>
                                 <include reference="XuR-J8-qbd"/>
+<<<<<<< Updated upstream
                                 <include reference="CIG-dO-p2b"/>
                                 <include reference="GMR-JT-C3c"/>
                                 <include reference="eLs-DP-YZ3"/>
+=======
+>>>>>>> Stashed changes
                                 <include reference="Aro-wQ-pF4"/>
                                 <include reference="fgP-ts-45b"/>
                                 <include reference="1Lm-DS-Eqg"/>
@@ -371,7 +445,15 @@
                                 <include reference="yyb-Z6-FRh"/>
                                 <include reference="Cq2-hO-yiP"/>
                                 <include reference="szg-RJ-K19"/>
+<<<<<<< Updated upstream
                                 <include reference="Eq6-2K-W7S"/>
+=======
+                                <include reference="EBM-sS-Y3N"/>
+                                <include reference="gkb-i5-3u2"/>
+                                <include reference="gov-CL-c2i"/>
+                                <include reference="sF3-Yv-x2L"/>
+                                <include reference="3Hc-Nd-NLZ"/>
+>>>>>>> Stashed changes
                             </mask>
                         </variation>
                     </view>

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController<UIWebViewDelegate>
+@interface ViewController : UIViewController<UIWebViewDelegate,UIActionSheetDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *Go;
 @property (weak, nonatomic) IBOutlet UIWebView *aWeb;

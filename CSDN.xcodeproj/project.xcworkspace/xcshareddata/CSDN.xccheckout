@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>642D6C4C-843B-44A7-8AD5-AF704E94CD77</string>
 	<key>IDESourceControlProjectName</key>
-	<string>CSDN</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>CA1C07227E19D82317F6E6CBB85BDDB0D3FB6DF3</key>
 		<string>https://github.com/xiayuqingfeng/CSDN.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>CSDN.xcodeproj</string>
+	<string>CSDN.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>CA1C07227E19D82317F6E6CBB85BDDB0D3FB6DF3</key>
