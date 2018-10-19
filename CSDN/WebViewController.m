@@ -104,8 +104,7 @@
     NSString *urlStr = [NSString stringWithFormat:@"(?i)(?<=%@)(\\d*)",containsStr];
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:urlStr options:0 error:nil];
     NSArray *array = [regex matchesInString:currentHTML options:0 range:NSMakeRange(0, [currentHTML length])];
-    for (NSTextCheckingResult* b in array)
-    {
+    for (NSTextCheckingResult* b in array){
         NSString *str1 = [currentHTML substringWithRange:b.range];
         if (str1.length == 8) {
             if (![urlIdArray containsObject:str1]) {
