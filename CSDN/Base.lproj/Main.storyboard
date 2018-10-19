@@ -1,9 +1,14 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,17 +20,17 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTp-Ws-RA2">
-                                <rect key="frame" x="214" y="51" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.21465098329999999" green="1" blue="0.5818550428" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTp-Ws-RA2">
+                                <rect key="frame" x="8" y="185" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.21465098329999999" green="1" blue="0.5818550428" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="oLx-Xu-KjT"/>
                                 </constraints>
                                 <state key="normal" title="刷博客">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -42,8 +47,8 @@
                                 </connections>
                             </button>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OJD-3J-BWd">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="150"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="FdU-9e-Rnq">
                                         <variation key="widthClass=compact" constant="150"/>
@@ -61,13 +66,13 @@
                                 </variation>
                             </webView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7UJ-0d-j8d">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.21465098329999999" green="1" blue="0.5818550428" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="59" y="185" width="74" height="30"/>
+                                <color key="backgroundColor" red="0.21465098329999999" green="1" blue="0.5818550428" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="sBw-Et-m9L"/>
                                 </constraints>
                                 <state key="normal" title="添加博客id">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -84,12 +89,12 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="博客总数" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejx-1O-hBg">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <rect key="frame" x="8" y="223" width="69.5" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="x6R-ZF-vUq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -103,12 +108,12 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0条" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="giV-Z5-omS">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <rect key="frame" x="85.5" y="222" width="28" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Xvk-rk-s5I"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -122,19 +127,19 @@
                                 </variation>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Kb-Xq-ubF">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="8" y="252" width="359" height="354"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oO-Jh-oMe">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.21465098329999999" green="1" blue="0.5818550428" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="138" y="185" width="44" height="30"/>
+                                <color key="backgroundColor" red="0.21465098329999999" green="1" blue="0.5818550428" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="qha-Kc-sMh"/>
                                 </constraints>
                                 <state key="normal" title="清理id">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -151,13 +156,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FnQ-OP-Vs6">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.21568627450980393" green="1" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="187" y="185" width="62" height="30"/>
+                                <color key="backgroundColor" red="0.21568627450980393" green="1" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="kkh-dl-H7s"/>
                                 </constraints>
                                 <state key="normal" title="设置博客">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -174,22 +179,22 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hx3-Ug-6C0">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.21568627450980393" green="1" blue="0.43529411764705883" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="254" y="185" width="62" height="30"/>
+                                <color key="backgroundColor" red="0.21568627450980393" green="1" blue="0.43529411764705883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="刷新网页">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="refresh:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U5K-l6-rpo"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="刷新" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1OO-pf-01M">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <rect key="frame" x="149.5" y="222" width="35" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Idz-b2-bes"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -203,12 +208,12 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0条" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25X-V0-Vz5">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <rect key="frame" x="192.5" y="222" width="28" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="yTY-sL-UuB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -221,42 +226,22 @@
                                     </mask>
                                 </variation>
                             </label>
-<<<<<<< Updated upstream
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fm6-zl-90N">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="i4q-11-Mck"/>
-                                </constraints>
-                                <state key="normal" title="计时刷新">
-=======
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vir-RT-61e">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.21568627450980393" green="1" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="8" y="617" width="62" height="30"/>
+                                <color key="backgroundColor" red="0.21568627450980393" green="1" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Utw-ot-RZl"/>
                                 </constraints>
                                 <state key="normal" title="清理缓存">
->>>>>>> Stashed changes
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
-<<<<<<< Updated upstream
-                                        <exclude reference="i4q-11-Mck"/>
-=======
                                         <exclude reference="Utw-ot-RZl"/>
->>>>>>> Stashed changes
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
-<<<<<<< Updated upstream
-                                        <include reference="i4q-11-Mck"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="timeRefresh:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vlJ-TU-oac"/>
-=======
                                         <include reference="Utw-ot-RZl"/>
                                     </mask>
                                 </variation>
@@ -265,13 +250,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1j-pR-M40">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.2156862745" green="1" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="87" y="617" width="76" height="30"/>
+                                <color key="backgroundColor" red="0.2156862745" green="1" blue="0.50980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="5Ws-zR-LCG"/>
                                 </constraints>
                                 <state key="normal" title="清理cookie">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -285,11 +270,10 @@
                                 </variation>
                                 <connections>
                                     <action selector="removeCookie:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6fg-Xz-4TC"/>
->>>>>>> Stashed changes
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.72299330581756038" green="1" blue="0.97388550806121665" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.72299330581756038" green="1" blue="0.97388550806121665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="7UJ-0d-j8d" firstAttribute="top" secondItem="OJD-3J-BWd" secondAttribute="bottom" constant="15" id="1Lm-DS-Eqg"/>
                             <constraint firstItem="giV-Z5-omS" firstAttribute="centerY" secondItem="1OO-pf-01M" secondAttribute="centerY" id="2UY-0b-iOq"/>
@@ -300,7 +284,6 @@
                             <constraint firstItem="QTp-Ws-RA2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Aro-wQ-pF4">
                                 <variation key="widthClass=compact" constant="8"/>
                             </constraint>
-                            <constraint firstItem="Fm6-zl-90N" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="CIG-dO-p2b"/>
                             <constraint firstAttribute="trailing" secondItem="OJD-3J-BWd" secondAttribute="trailing" id="ChJ-al-Xm1"/>
                             <constraint firstItem="hx3-Ug-6C0" firstAttribute="leading" secondItem="FnQ-OP-Vs6" secondAttribute="trailing" constant="17" id="Cq2-hO-yiP">
                                 <variation key="widthClass=compact" constant="5"/>
@@ -309,7 +292,6 @@
                             <constraint firstItem="2oO-Jh-oMe" firstAttribute="leading" secondItem="7UJ-0d-j8d" secondAttribute="trailing" constant="16" id="Ffa-4m-b8W">
                                 <variation key="widthClass=compact" constant="5"/>
                             </constraint>
-                            <constraint firstAttribute="trailing" secondItem="Fm6-zl-90N" secondAttribute="trailing" id="GMR-JT-C3c"/>
                             <constraint firstItem="ejx-1O-hBg" firstAttribute="top" secondItem="QTp-Ws-RA2" secondAttribute="bottom" constant="8" id="QBC-Wg-sKR"/>
                             <constraint firstItem="ejx-1O-hBg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="Qf3-O2-lhl"/>
                             <constraint firstItem="OJD-3J-BWd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Rmc-NZ-6Qy"/>
@@ -317,7 +299,6 @@
                             <constraint firstItem="2oO-Jh-oMe" firstAttribute="centerY" secondItem="FnQ-OP-Vs6" secondAttribute="centerY" id="Xp3-Wj-ACf"/>
                             <constraint firstItem="OJD-3J-BWd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="XuR-J8-qbd"/>
                             <constraint firstItem="7UJ-0d-j8d" firstAttribute="centerY" secondItem="2oO-Jh-oMe" secondAttribute="centerY" id="cqK-pK-ABz"/>
-                            <constraint firstItem="Fm6-zl-90N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="2" id="eLs-DP-YZ3"/>
                             <constraint firstAttribute="trailing" secondItem="7Kb-Xq-ubF" secondAttribute="trailing" constant="8" id="fRn-Rl-xQx"/>
                             <constraint firstItem="QTp-Ws-RA2" firstAttribute="top" secondItem="OJD-3J-BWd" secondAttribute="bottom" constant="15" id="fgP-ts-45b"/>
                             <constraint firstItem="vir-RT-61e" firstAttribute="top" secondItem="f1j-pR-M40" secondAttribute="top" id="gkb-i5-3u2"/>
@@ -346,53 +327,39 @@
                                 <exclude reference="hx3-Ug-6C0"/>
                                 <exclude reference="1OO-pf-01M"/>
                                 <exclude reference="25X-V0-Vz5"/>
-<<<<<<< Updated upstream
-                                <exclude reference="Fm6-zl-90N"/>
-=======
                                 <exclude reference="vir-RT-61e"/>
                                 <exclude reference="f1j-pR-M40"/>
->>>>>>> Stashed changes
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="ChJ-al-Xm1"/>
-                                <exclude reference="Rmc-NZ-6Qy"/>
-                                <exclude reference="XuR-J8-qbd"/>
-<<<<<<< Updated upstream
-                                <exclude reference="CIG-dO-p2b"/>
-                                <exclude reference="GMR-JT-C3c"/>
-                                <exclude reference="eLs-DP-YZ3"/>
-=======
->>>>>>> Stashed changes
-                                <exclude reference="Aro-wQ-pF4"/>
-                                <exclude reference="fgP-ts-45b"/>
-                                <exclude reference="1Lm-DS-Eqg"/>
-                                <exclude reference="cqK-pK-ABz"/>
-                                <exclude reference="xR2-34-iuv"/>
-                                <exclude reference="QBC-Wg-sKR"/>
-                                <exclude reference="Qf3-O2-lhl"/>
-                                <exclude reference="Ffa-4m-b8W"/>
-                                <exclude reference="Xp3-Wj-ACf"/>
-                                <exclude reference="2UY-0b-iOq"/>
-                                <exclude reference="WqE-XY-Ug3"/>
-                                <exclude reference="sw8-Dd-Ifi"/>
-                                <exclude reference="8X0-zA-8D5"/>
-                                <exclude reference="fRn-Rl-xQx"/>
-                                <exclude reference="qgq-JM-RAc"/>
-                                <exclude reference="t09-gv-dDJ"/>
                                 <exclude reference="2gS-Jw-QZE"/>
                                 <exclude reference="779-Gt-X1K"/>
                                 <exclude reference="yyb-Z6-FRh"/>
+                                <exclude reference="QBC-Wg-sKR"/>
+                                <exclude reference="Qf3-O2-lhl"/>
+                                <exclude reference="2UY-0b-iOq"/>
+                                <exclude reference="WqE-XY-Ug3"/>
+                                <exclude reference="sw8-Dd-Ifi"/>
+                                <exclude reference="Ffa-4m-b8W"/>
+                                <exclude reference="Xp3-Wj-ACf"/>
+                                <exclude reference="1Lm-DS-Eqg"/>
+                                <exclude reference="cqK-pK-ABz"/>
+                                <exclude reference="xR2-34-iuv"/>
+                                <exclude reference="t09-gv-dDJ"/>
+                                <exclude reference="sF3-Yv-x2L"/>
                                 <exclude reference="Cq2-hO-yiP"/>
                                 <exclude reference="szg-RJ-K19"/>
-<<<<<<< Updated upstream
-                                <exclude reference="Eq6-2K-W7S"/>
-=======
                                 <exclude reference="EBM-sS-Y3N"/>
                                 <exclude reference="gkb-i5-3u2"/>
                                 <exclude reference="gov-CL-c2i"/>
-                                <exclude reference="sF3-Yv-x2L"/>
+                                <exclude reference="8X0-zA-8D5"/>
+                                <exclude reference="fRn-Rl-xQx"/>
+                                <exclude reference="qgq-JM-RAc"/>
+                                <exclude reference="ChJ-al-Xm1"/>
+                                <exclude reference="Rmc-NZ-6Qy"/>
+                                <exclude reference="XuR-J8-qbd"/>
+                                <exclude reference="Aro-wQ-pF4"/>
+                                <exclude reference="fgP-ts-45b"/>
                                 <exclude reference="3Hc-Nd-NLZ"/>
->>>>>>> Stashed changes
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -407,53 +374,39 @@
                                 <include reference="hx3-Ug-6C0"/>
                                 <include reference="1OO-pf-01M"/>
                                 <include reference="25X-V0-Vz5"/>
-<<<<<<< Updated upstream
-                                <include reference="Fm6-zl-90N"/>
-=======
                                 <include reference="vir-RT-61e"/>
                                 <include reference="f1j-pR-M40"/>
->>>>>>> Stashed changes
                             </mask>
                             <mask key="constraints">
-                                <include reference="ChJ-al-Xm1"/>
-                                <include reference="Rmc-NZ-6Qy"/>
-                                <include reference="XuR-J8-qbd"/>
-<<<<<<< Updated upstream
-                                <include reference="CIG-dO-p2b"/>
-                                <include reference="GMR-JT-C3c"/>
-                                <include reference="eLs-DP-YZ3"/>
-=======
->>>>>>> Stashed changes
-                                <include reference="Aro-wQ-pF4"/>
-                                <include reference="fgP-ts-45b"/>
-                                <include reference="1Lm-DS-Eqg"/>
-                                <include reference="cqK-pK-ABz"/>
-                                <include reference="xR2-34-iuv"/>
-                                <include reference="QBC-Wg-sKR"/>
-                                <include reference="Qf3-O2-lhl"/>
-                                <include reference="Ffa-4m-b8W"/>
-                                <include reference="Xp3-Wj-ACf"/>
-                                <include reference="2UY-0b-iOq"/>
-                                <include reference="WqE-XY-Ug3"/>
-                                <include reference="sw8-Dd-Ifi"/>
-                                <include reference="8X0-zA-8D5"/>
-                                <include reference="fRn-Rl-xQx"/>
-                                <include reference="qgq-JM-RAc"/>
-                                <include reference="t09-gv-dDJ"/>
                                 <include reference="2gS-Jw-QZE"/>
                                 <include reference="779-Gt-X1K"/>
                                 <include reference="yyb-Z6-FRh"/>
+                                <include reference="QBC-Wg-sKR"/>
+                                <include reference="Qf3-O2-lhl"/>
+                                <include reference="2UY-0b-iOq"/>
+                                <include reference="WqE-XY-Ug3"/>
+                                <include reference="sw8-Dd-Ifi"/>
+                                <include reference="Ffa-4m-b8W"/>
+                                <include reference="Xp3-Wj-ACf"/>
+                                <include reference="1Lm-DS-Eqg"/>
+                                <include reference="cqK-pK-ABz"/>
+                                <include reference="xR2-34-iuv"/>
+                                <include reference="t09-gv-dDJ"/>
+                                <include reference="sF3-Yv-x2L"/>
                                 <include reference="Cq2-hO-yiP"/>
                                 <include reference="szg-RJ-K19"/>
-<<<<<<< Updated upstream
-                                <include reference="Eq6-2K-W7S"/>
-=======
                                 <include reference="EBM-sS-Y3N"/>
                                 <include reference="gkb-i5-3u2"/>
                                 <include reference="gov-CL-c2i"/>
-                                <include reference="sF3-Yv-x2L"/>
+                                <include reference="8X0-zA-8D5"/>
+                                <include reference="fRn-Rl-xQx"/>
+                                <include reference="qgq-JM-RAc"/>
+                                <include reference="ChJ-al-Xm1"/>
+                                <include reference="Rmc-NZ-6Qy"/>
+                                <include reference="XuR-J8-qbd"/>
+                                <include reference="Aro-wQ-pF4"/>
+                                <include reference="fgP-ts-45b"/>
                                 <include reference="3Hc-Nd-NLZ"/>
->>>>>>> Stashed changes
                             </mask>
                         </variation>
                     </view>
@@ -478,22 +431,22 @@
                         <viewControllerLayoutGuide type="bottom" id="GFl-cs-QEm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zES-af-Tyd">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vNa-Mh-6Ys">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" red="0.49685164880048149" green="1" blue="0.8146183316589326" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                                <color key="backgroundColor" red="0.49685164880048149" green="1" blue="0.8146183316589326" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2f-tY-vyy">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.82371636950000005" green="1" blue="0.30518503699999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="20" width="80" height="30"/>
+                                <color key="backgroundColor" red="0.82371636950000005" green="1" blue="0.30518503699999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="CBQ-ZA-kbM"/>
                                     <constraint firstAttribute="width" constant="80" id="onc-fL-a4T"/>
                                 </constraints>
                                 <state key="normal" title="上一页">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -512,14 +465,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0KX-Nj-I9Y">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.65559417946948906" green="1" blue="0.51456000644233524" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="80" y="20" width="80" height="30"/>
+                                <color key="backgroundColor" red="0.65559417946948906" green="1" blue="0.51456000644233524" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="OIt-0l-cO2"/>
                                     <constraint firstAttribute="width" constant="80" id="ij9-rb-sk5"/>
                                 </constraints>
                                 <state key="normal" title="返回">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -538,7 +491,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.67450980392156867" green="1" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.67450980392156867" green="1" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="0KX-Nj-I9Y" firstAttribute="leading" secondItem="m2f-tY-vyy" secondAttribute="trailing" id="1CT-It-a8l"/>
                             <constraint firstItem="vNa-Mh-6Ys" firstAttribute="leading" secondItem="zES-af-Tyd" secondAttribute="leading" id="69d-TE-qke"/>
@@ -601,18 +554,18 @@
                         <viewControllerLayoutGuide type="bottom" id="Hgg-Pb-a6U"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="M8s-OB-ARZ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="博客刷新" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcL-TP-kWg">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <color key="backgroundColor" red="0.4186313036218029" green="1" blue="0.46761898725778173" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="16" y="50" width="78" height="21"/>
+                                <color key="backgroundColor" red="0.4186313036218029" green="1" blue="0.46761898725778173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="l3c-Sm-zQB"/>
                                     <constraint firstAttribute="width" constant="78" id="qta-SF-ASF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -628,14 +581,14 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="博客列表" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuI-GU-dWd">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <color key="backgroundColor" red="0.4186313036" green="1" blue="0.46761898730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="21" y="151" width="68" height="21"/>
+                                <color key="backgroundColor" red="0.4186313036" green="1" blue="0.46761898730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Msl-It-F7I"/>
                                     <constraint firstAttribute="width" constant="68" id="Yhx-Mq-ySy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -651,8 +604,8 @@
                                 </variation>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="http://blog.csdn.net/u012460084/article/details/" translatesAutoresizingMaskIntoConstraints="NO" id="bFg-4P-H5Q">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="110" y="50" width="249" height="50"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="139" id="XbM-dy-cRp">
                                         <variation key="widthClass=compact" constant="50"/>
@@ -672,20 +625,20 @@
                                 </variation>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="http://blog.csdn.net/u012460084/" translatesAutoresizingMaskIntoConstraints="NO" id="SmT-uc-ECP">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="110" y="151" width="249" height="50"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDe-eV-MDN">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.64713541669999997" green="0.50721837989999996" blue="0.15360128419999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="110" y="105" width="87" height="35"/>
+                                <color key="backgroundColor" red="0.64713541669999997" green="0.50721837989999996" blue="0.15360128419999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="87" id="Gvr-m1-Myr"/>
                                     <constraint firstAttribute="height" constant="35" id="xww-ep-DpH"/>
                                 </constraints>
                                 <state key="normal" title="设置">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -704,14 +657,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9a-sX-8bh">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.94390210406469077" green="1" blue="0.26919016709527044" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="16" y="20" width="78" height="30"/>
+                                <color key="backgroundColor" red="0.94390210406469077" green="1" blue="0.26919016709527044" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="78" id="tCg-3b-LoN"/>
                                     <constraint firstAttribute="height" constant="30" id="zEz-Xy-YbE"/>
                                 </constraints>
                                 <state key="normal" title="返回">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -730,14 +683,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BuS-9f-axq">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.64713541669999997" green="0.50721837989999996" blue="0.15360128419999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="110" y="206" width="87" height="35"/>
+                                <color key="backgroundColor" red="0.64713541669999997" green="0.50721837989999996" blue="0.15360128419999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="gx5-zK-4bb"/>
                                     <constraint firstAttribute="width" constant="87" id="sAW-3S-anQ"/>
                                 </constraints>
                                 <state key="normal" title="设置">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -756,8 +709,8 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="/u012460084/article/details/" translatesAutoresizingMaskIntoConstraints="NO" id="hsz-Zp-F7Z">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="110" y="252" width="249" height="50"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="89" id="tF2-O5-dwp">
                                         <variation key="widthClass=compact" constant="50"/>
@@ -777,13 +730,13 @@
                                 </variation>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关键字段" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZkL-Pu-bfn">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <color key="backgroundColor" red="0.37254901960784315" green="1" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="21" y="252" width="69.5" height="21"/>
+                                <color key="backgroundColor" red="0.37254901960784315" green="1" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="H9g-qy-uwX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -797,14 +750,14 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EeJ-hI-7oL">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.57647058819999997" green="0.43529411759999997" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="110" y="307" width="87" height="35"/>
+                                <color key="backgroundColor" red="0.57647058819999997" green="0.43529411759999997" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="npY-L8-4K1"/>
                                     <constraint firstAttribute="width" constant="87" id="vwF-7c-TaL"/>
                                 </constraints>
                                 <state key="normal" title="使用">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -823,13 +776,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最长id数组" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sw0-9f-ucR">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <color key="backgroundColor" red="0.37254901960784315" green="1" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="21" y="355" width="83.5" height="21"/>
+                                <color key="backgroundColor" red="0.37254901960784315" green="1" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Pdh-YQ-FgW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -843,8 +796,8 @@
                                 </variation>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bNo-EF-WQW">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="110" y="355" width="249" height="128"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="Rcq-EO-ure"/>
                                 </constraints>
@@ -862,14 +815,14 @@
                                 </variation>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etF-kg-Apc">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.50196078430000002" green="0.36078431370000003" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="272" y="488" width="87" height="36"/>
+                                <color key="backgroundColor" red="0.50196078430000002" green="0.36078431370000003" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="87" id="n5F-Fb-Cq0"/>
                                     <constraint firstAttribute="height" constant="36" id="s0u-la-tUK"/>
                                 </constraints>
                                 <state key="normal" title="清空">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -888,14 +841,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDb-UO-WjR">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.50196078431372548" green="0.36078431372549019" blue="0.094117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="110" y="488" width="87" height="36"/>
+                                <color key="backgroundColor" red="0.50196078431372548" green="0.36078431372549019" blue="0.094117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="87" id="Ljc-zS-Bmj"/>
                                     <constraint firstAttribute="height" constant="36" id="b0l-YM-Z2A"/>
                                 </constraints>
                                 <state key="normal" title="使用">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -914,7 +867,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.67450980392156867" green="1" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.67450980392156867" green="1" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="lDe-eV-MDN" firstAttribute="leading" secondItem="bFg-4P-H5Q" secondAttribute="leading" id="39f-Dh-jP2"/>
                             <constraint firstItem="lDe-eV-MDN" firstAttribute="top" secondItem="bFg-4P-H5Q" secondAttribute="bottom" constant="28" id="7CJ-oD-ycj">

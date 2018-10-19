@@ -79,39 +79,6 @@
         printXAndY(title);
     }
 }
-- (IBAction)clearIdArray:(id)sender {
-    NSArray *clearArray = [NSArray array];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:clearArray forKey:@"UrlArray"];
-    [defaults synchronize];
-    _readData.text = @"现有博客ID数组：";
-    _idCount.text = @"0条";
-    urlStrArray = [NSArray array];
-    [refreshIdArray removeAllObjects];
-}
-- (IBAction)refresh:(id)sender {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    httpStr = [defaults stringForKey:@"httpStr"];
-    NSURL *aNSURL = [NSURL URLWithString:httpStr];
-    NSURLRequest *request = [NSURLRequest requestWithURL:aNSURL];
-    [_aWeb loadRequest:request];
-}
-- (IBAction)removeCached:(id)sender {
-    //清除UIWebView的缓存
-    NSURLCache * cache = [NSURLCache sharedURLCache];
-    [cache removeAllCachedResponses];
-    [cache setDiskCapacity:0];
-    [cache setMemoryCapacity:0];
-}
-- (IBAction)removeCookie:(id)sender {
-    //清除cookies
-    NSHTTPCookie *cookie;
-    NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-    for (cookie in [storage cookies])
-    {
-        [storage deleteCookie:cookie];
-    }
-}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
