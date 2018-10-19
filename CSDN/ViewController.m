@@ -14,25 +14,46 @@
     NSString *containsStr;
     NSArray *urlStrArray;
     NSMutableArray *refreshIdArray;
+    NSTimer *aTimer;
+    NSInteger aIndex;
 }
 @end
 #define arc_block(x) __block typeof(x) __weak weak_##x = x
 #define EQUAL(a, b)	[a isEqual:b]
 @implementation ViewController
-- (IBAction)Go:(id)sender {
-    [self requestFirstUrl];
+- (IBAction)beign:(id)sender {
+    aIndex = 0;
+    
+    if (aTimer) {
+        [aTimer invalidate];
+        aTimer = nil;
+    }
+    
+    aTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(Timered:) userInfo:nil repeats:YES];
 }
-- (void)requestFirstUrl{
-    [_aWeb stopLoading];
-    if (urlStrArray.count > 0) {
-        NSURL *aNSURL = [NSURL URLWithString:[httpStr stringByAppendingString:[NSString stringWithFormat:@"%@",urlStrArray[0]]]];
-        NSURLRequest *request = [NSURLRequest requestWithURL:aNSURL];
-        [_aWeb loadRequest:request];
+- (IBAction)stop:(id)sender {
+    if (aTimer) {
+        [aTimer invalidate];
+        aTimer = nil;
     }else{
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"警告" message:@"id数组为空" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
-        [alertView show];
+        aTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(Timered:) userInfo:nil repeats:YES];
     }
 }
+
+- (void)Timered:(NSTimer*)timer {
+    if (urlStrArray.count > aIndex) {
+        NSURL *aNSURL = [NSURL URLWithString:[httpStr stringByAppendingString:[NSString stringWithFormat:@"%@",urlStrArray[aIndex]]]];
+        NSURLRequest *request = [NSURLRequest requestWithURL:aNSURL];
+        [_aWeb loadRequest:request];
+        
+        if (aIndex < urlStrArray.count-1) {
+            aIndex++;
+        }else{
+            aIndex = 0;
+        }
+    }
+}
+
 - (IBAction)clearIdArray:(id)sender {
     NSArray *clearArray = [NSArray array];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -63,89 +84,6 @@
     _readData.text = [NSString stringWithFormat:@"现有博客ID数组：\n%@",urlStrArray];
     _idCount.text = [NSString stringWithFormat:@"%ld条",(unsigned long)urlStrArray.count];
     
-}
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    urlStrArray= [NSMutableArray arrayWithArray:[defaults arrayForKey:@"UrlArray"]];
-    _readData.text = [NSString stringWithFormat:@"现有博客ID数组：\n%@",urlStrArray];
-    _idCount.text = [NSString stringWithFormat:@"%ld条",(unsigned long)urlStrArray.count];
-}
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-}
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
-    //判断是否是单击
-    if (navigationType == UIWebViewNavigationTypeLinkClicked){
-        return NO;
-    }
-    
-    if (urlStrArray.count > 0 && httpStr.length > 0 && containsStr.length > 0) {
-        NSString *requestUrl = [NSString stringWithFormat:@"%@",request.URL];
-        if ([requestUrl containsString:containsStr]) {
-            NSRange rang =  [requestUrl rangeOfString:containsStr];
-            NSString *idStr = [requestUrl substringFromIndex:rang.location + rang.length];
-            if (idStr.length == 8) {
-                if (![refreshIdArray containsObject:requestUrl]) {
-                    [refreshIdArray addObject:requestUrl];
-                    _readData.text = [NSString stringWithFormat:@"%@",refreshIdArray];
-                }
-            }
-        }
-    }
-    return YES;
-}
-- (void)webViewDidStartLoad:(UIWebView *)webView{
-    
-}
-- (void)webViewDidFinishLoad:(UIWebView *)webView{
-    NSString *requestUrl = [NSString stringWithFormat:@"%@",[webView.request URL]];
-    if (urlStrArray.count > 0 && httpStr.length > 0 && containsStr.length > 0 && [requestUrl containsString:containsStr]) {
-        NSRange rang =  [requestUrl rangeOfString:containsStr];
-        NSString *idStr = [requestUrl substringFromIndex:rang.location+rang.length];
-        NSInteger index = [urlStrArray indexOfObject:idStr];
-        _refreshShow.text = [NSString stringWithFormat:@"%ld条",(long)index+1];
-        
-        if (index < urlStrArray.count-1) {
-            NSURL *aNSURL = [NSURL URLWithString:[httpStr stringByAppendingString:[NSString stringWithFormat:@"%@",urlStrArray[index+1]]]];
-            NSURLRequest *request = [NSURLRequest requestWithURL:aNSURL];
-            [_aWeb loadRequest:request];
-        }else{
-            NSURL *aNSURL = [NSURL URLWithString:[httpStr stringByAppendingString:[NSString stringWithFormat:@"%@",urlStrArray[0]]]];
-            NSURLRequest *request = [NSURLRequest requestWithURL:aNSURL];
-            [_aWeb loadRequest:request];
-            refreshIdArray = [NSMutableArray arrayWithCapacity:0];
-        }
-    }
-}
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
-//    _aWeb.delegate = nil;
-//    [_aWeb stopLoading];
-//    
-//    NSString *requestUrl = [NSString stringWithFormat:@"%@",[webView.request URL]];
-//    if (urlStrArray.count > 0 && httpStr.length > 0 && containsStr.length > 0 && [requestUrl containsString:containsStr]) {
-//        NSRange rang =  [requestUrl rangeOfString:containsStr];
-//        NSString *idStr = [requestUrl substringFromIndex:rang.location+rang.length];
-//        NSInteger index = [urlStrArray indexOfObject:idStr];
-//        
-//        if (index < urlStrArray.count-1) {
-//            NSURL *aNSURL = [NSURL URLWithString:[httpStr stringByAppendingString:[NSString stringWithFormat:@"%@",urlStrArray[index+1]]]];
-//            NSURLRequest *request = [NSURLRequest requestWithURL:aNSURL];
-//            _aWeb.delegate = self;
-//            [_aWeb loadRequest:request];
-//        }else{
-//            NSURL *aNSURL = [NSURL URLWithString:[httpStr stringByAppendingString:[NSString stringWithFormat:@"%@",urlStrArray[0]]]];
-//            NSURLRequest *request = [NSURLRequest requestWithURL:aNSURL];
-//            _aWeb.delegate = self;
-//            [_aWeb loadRequest:request];
-//            refreshIdArray = [NSMutableArray arrayWithCapacity:0];
-//        }
-//    }
 }
 
 @end
