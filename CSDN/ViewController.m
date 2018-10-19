@@ -79,8 +79,6 @@
         printXAndY(title);
     }
 }
-<<<<<<< Updated upstream
-=======
 - (IBAction)clearIdArray:(id)sender {
     NSArray *clearArray = [NSArray array];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -114,8 +112,6 @@
         [storage deleteCookie:cookie];
     }
 }
-
->>>>>>> Stashed changes
 - (void)viewDidLoad {
     [super viewDidLoad];
     
