@@ -10,11 +10,12 @@
 
 @interface ViewController : UIViewController<UIWebViewDelegate,UIActionSheetDelegate>
 
-@property (weak, nonatomic) IBOutlet UIButton *Go;
 @property (weak, nonatomic) IBOutlet UIWebView *aWeb;
 @property (weak, nonatomic) IBOutlet UILabel *idCount;
 @property (strong, nonatomic) IBOutlet UILabel *refreshShow;
 @property (weak, nonatomic) IBOutlet UITextView *readData;
+@property (weak, nonatomic) IBOutlet UIButton *begin;
+@property (weak, nonatomic) IBOutlet UIButton *stop;
 
 @end
 
